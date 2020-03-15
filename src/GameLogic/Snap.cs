@@ -37,6 +37,7 @@ namespace CardGames.GameLogic
 		public Snap ()
 		{
 			_deck = new Deck ();
+                        _gameTimer = SwinGame.CreateTimer ();
 		}
 
 		/// <summary>
@@ -92,7 +93,9 @@ namespace CardGames.GameLogic
 				_deck.Shuffle ();		// Return the cards and shuffle
 
 				FlipNextCard ();		// Flip the first card...
-			}
+			        _gameTimer.Start();
+                        }
+                 
 		}
 			
 		public void FlipNextCard()
